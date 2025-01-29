@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    /* Navbar styles */
+ /* Navbar styles */
+
+ .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px 30px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 100px;
+        }
+
+        .nav-links, .nav-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a, .nav-right a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            padding: 10px;
+            position: relative;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 10;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            background: white;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #007bff;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+
+/* Search bar styles */
+.searchbar {
+  display: none; /* Hidden by default */
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 0.8rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.searchbar .logo img {
+  width: 40px; /* Adjust logo size */
+  margin-right: 1rem;
+}
+
+.searchbar input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.hidden {
+  transform: translateY(-100%); /* Hide navbar by moving it up */
+}
+
+.visible {
+  display: flex; /* Show search bar */
+}
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 70vh;
+      background: url('home1.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-bar input {
+      width: 70%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .search-bar button {
+      padding: 0.8rem;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Next Section */
+    .next-section {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      background-color: #f9f9f9;
+    }
+
+    .next-section .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .next-section .card img {
+      width: 100%; /* Ensure the image fills the card width */
+      height: 150px; /* Set a consistent height */
+      object-fit: cover; /* Maintain the aspect ratio and crop if necessary */
+      border-radius: 8px; /* Add rounded corners to match the card style */
+      margin-bottom: 1rem; /* Add spacing between the image and the text */
+}
+
+    .next-section .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .next-section .card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .next-section .card button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .next-section .card button:hover {
+      background-color: #0056b3;
+    }
+
+    .about-section {
+  padding: 2rem;
+  background-color: #f9f9f9; /* Light background for a clean look */
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50; /* Dark blue for contrast */
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555; /* Neutral gray for readability */
+  margin-bottom: 1rem;
+}
+
+.about-text button {
+  background-color: #3498db; /* Vibrant blue for CTA */
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-text button:hover {
+  background-color: #2980b9; /* Darker shade on hover */
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 1rem 2rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Responsive for smaller screens */
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon img {
+  width: 32px; /* Icon size */
+  height: 32px;
+  transition: transform 0.3s;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.footer-policy {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-policy a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-policy a:hover {
+  color: #007bff;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+        <img src="dala (1).png" alt="Logo">
+    </div>
+    <div class="nav-links">
+        <div class="dropdown">
+            <a href="#">Buy</a>
+            <div class="dropdown-menu">
+                <a href="#">Homes for Sale</a>
+                <a href="#">New Construction for Sale</a>
+                <a href="#">Home Value</a>
+                <a href="#">Home Buying Tips</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Rent</a>
+            <div class="dropdown-menu">
+                <a href="#">Apartments for Rent</a>
+                <a href="#">Houses for Rent</a>
+                <a href="#">Renter Tools</a>
+                <a href="#">Landlord Tools</a>
+                <a href="#">Renting Tips</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Sell</a>
+            <div class="dropdown-menu">
+                <a href="#">Home Selling Tools</a>
+                <a href="#">Home Selling Advice</a>
+                <a href="#">Recently Sold</a>
+            </div>
+        </div>
+        <a href="#">Shop</a>
+        <a href="#">Home Loans</a>
+        <a href="#">Find an Agent</a>
+    </div>
+    <div class="nav-right">
+        <a href="#">Manage Rentals</a>
+        <a href="#">Advertise</a>
+        <a href="#">Help</a>
+        <a href="#">Sign In</a>
+    </div>
+</nav>
+
+  <!-- Search bar to replace navbar -->
+  <div class="searchbar" id="searchbar">
+    <div class="logo">
+      <img src="dala (2).png" alt="Logo">
+    </div>
+    <input type="text" placeholder="Search properties...">
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Agents. Tours. Loans. Homes.</h1>
+      <p>Find your dream home today with RealEstate.</p>
+      <div class="search-bar">
+        <input type="text" placeholder="Enter an address, neighborhood, city, or ZIP code">
+        <button>Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Section -->
+  <section class="next-section">
+    <div class="card">
+      <img src="home2.jpg" alt="Buy Home Icon">
+      <h3>Buy a Home</h3>
+      <p>Find your place with an immersive photo experience and the most listings.</p>
+      <button>Browse Homes</button>
+    </div>
+    <div class="card">
+      <img src="home3.jpg" alt="Sell Home Icon">
+      <h3>Sell a Home</h3>
+      <p>Explore your options to sell your home quickly and efficiently.</p>
+      <button>See Your Options</button>
+    </div>
+    <div class="card">
+      <img src="home1.jpg" alt="Rent Home Icon">
+      <h3>Rent a Home</h3>
+      <p>Discover seamless online rental experiences from search to application.</p>
+      <button>Find Rentals</button>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+          At <strong>Dala</strong>, we are dedicated to transforming dreams into reality. 
+          With a passion for excellence and a focus on your needs, we connect buyers, sellers, and renters with seamless real estate solutions. Our mission is to empower you with the tools and guidance to make informed decisions, whether you're looking to buy, sell, or rent your perfect home.
+        </p>
+        <p>
+          With years of expertise, innovation, and a commitment to customer satisfaction, 
+          we strive to make your journey as smooth and rewarding as possible. 
+          Discover the difference with <strong>dala</strong>.
+        </p>
+        <button>Learn More About Us</button>
+      </div>
+      <div class="about-image">
+        <img src="home1.jpg" alt="About Us Image">
+      </div>
+    </div>
+  </section>
+
+  <div class="main-content">
+    <!-- Other sections here -->
+  </div>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#" class="social-icon" aria-label="X">
+          <img src="x.png" alt="X Icon">
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <img src="facebook.png" alt="Facebook Icon">
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <img src="instagram.png" alt="Instagram Icon">
+        </a>
+      </div>
+      <div class="footer-policy">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>  
+
+  <script src="script.js"></script>
+</body>
+</html>
