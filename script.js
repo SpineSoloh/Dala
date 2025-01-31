@@ -42,4 +42,12 @@ document.querySelector(".search-btn").addEventListener("click", function() {
       alert("Please enter an address, city, zip, or neighborhood.");
   }
 });
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
   

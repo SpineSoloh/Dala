@@ -12,7 +12,6 @@
   /* Navigation Bar */
   /* Navbar styles */
 /* Navbar styles */
-
 .navbar {
   display: flex;
   align-items: center;
@@ -20,7 +19,7 @@
   background: white;
   padding: 10px 20px;
   position: relative;
-  z-index: 1000; /* Ensures navbar stays above other elements */
+  z-index: 1000;
 }
 
 .logo img {
@@ -45,6 +44,11 @@
   font-size: 16px;
 }
 
+/* Hide dropdown menu items by default */
+.dropdown-menu {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -64,25 +68,40 @@
 
   .menu-toggle {
     display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .nav-right {
+    display: none; /* Hide right section on mobile */
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
   }
 }
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  min-width: 200px;
-  z-index: 1001; /* Higher than hero section */
-}
-
+/* Show dropdown menu on hover for desktop */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -219,26 +238,33 @@ display: flex; /* Show search bar */
   .next-section {
     padding: 2rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Allows items to wrap on small screens */
+    justify-content: center; /* Centers cards when they wrap */
+    gap: 20px; /* Adds consistent spacing */
     background-color: #f9f9f9;
   }
 
-  .next-section .card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .next-section .card img {
-    width: 100%; /* Ensure the image fills the card width */
-    height: 150px; /* Set a consistent height */
-    object-fit: cover; /* Maintain the aspect ratio and crop if necessary */
-    border-radius: 8px; /* Add rounded corners to match the card style */
-    margin-bottom: 1rem; /* Add spacing between the image and the text */
+ /* Cards */
+.next-section .card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px); /* 3 columns on larger screens */
+  max-width: 320px; /* Prevents overly wide cards */
+  padding: 1.5rem;
+  text-align: center;
+  flex-grow: 1; /* Allows flexibility */
 }
+
+/* Images */
+.next-section .card img {
+  width: 100%; /* Ensures full width */
+  height: 150px; /* Fixed height */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
 
   .next-section .card h3 {
     font-size: 1.5rem;
@@ -264,19 +290,18 @@ display: flex; /* Show search bar */
     background-color: #0056b3;
   }
 
-  /* Responsive Sections */
-@media (max-width: 768px) {
-  .next-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
+/* Responsive Design */
+@media (max-width: 900px) {
   .next-section .card {
-    width: 90%;
-    margin-bottom: 15px;
+    width: calc(50% - 20px); /* 2 columns for tablets */
   }
 }
 
+@media (max-width: 600px) {
+  .next-section .card {
+    width: 100%; /* Full width for mobile */
+  }
+}
 
 .about-section {
 padding: 2rem;
