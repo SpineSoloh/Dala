@@ -3,338 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <title>Real Estate Website</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      line-height: 1.6;
-    }
-
-    /* Navigation Bar */
-    /* Navbar styles */
- /* Navbar styles */
-
- .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 15px 30px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo img {
-            height: 100px;
-        }
-
-        .nav-links, .nav-right {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a, .nav-right a {
-            text-decoration: none;
-            color: black;
-            font-size: 16px;
-            padding: 10px;
-            position: relative;
-        }
-
-        /* Dropdown styles */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            min-width: 200px;
-            z-index: 10;
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 10px;
-            color: black;
-            text-decoration: none;
-            background: white;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #007bff;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-
-/* Search bar styles */
-.searchbar {
-  display: none; /* Hidden by default */
-  align-items: center;
-  background-color: #f8f8f8;
-  padding: 0.8rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.searchbar .logo img {
-  width: 40px; /* Adjust logo size */
-  margin-right: 1rem;
-}
-
-.searchbar input {
-  width: 100%;
-  max-width: 500px;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.hidden {
-  transform: translateY(-100%); /* Hide navbar by moving it up */
-}
-
-.visible {
-  display: flex; /* Show search bar */
-}
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: 70vh;
-      background: url('home1.jpg') no-repeat center center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      max-width: 600px;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .search-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .search-bar input {
-      width: 70%;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px 0 0 5px;
-    }
-
-    .search-bar button {
-      padding: 0.8rem;
-      border: none;
-      background-color: #007bff;
-      color: #fff;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-    }
-
-    .search-bar button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Next Section */
-    .next-section {
-      padding: 2rem;
-      display: flex;
-      justify-content: space-between;
-      background-color: #f9f9f9;
-    }
-
-    .next-section .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 30%;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .next-section .card img {
-      width: 100%; /* Ensure the image fills the card width */
-      height: 150px; /* Set a consistent height */
-      object-fit: cover; /* Maintain the aspect ratio and crop if necessary */
-      border-radius: 8px; /* Add rounded corners to match the card style */
-      margin-bottom: 1rem; /* Add spacing between the image and the text */
-}
-
-    .next-section .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .next-section .card p {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-
-    .next-section .card button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .next-section .card button:hover {
-      background-color: #0056b3;
-    }
-
-    .about-section {
-  padding: 2rem;
-  background-color: #f9f9f9; /* Light background for a clean look */
-}
-
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2c3e50; /* Dark blue for contrast */
-}
-
-.about-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555; /* Neutral gray for readability */
-  margin-bottom: 1rem;
-}
-
-.about-text button {
-  background-color: #3498db; /* Vibrant blue for CTA */
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.about-text button:hover {
-  background-color: #2980b9; /* Darker shade on hover */
-}
-
-.about-image {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.about-image img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.footer {
-  background-color: #f8f8f8;
-  padding: 1rem 2rem;
-  border-top: 1px solid #ddd;
-  text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Responsive for smaller screens */
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-icon img {
-  width: 32px; /* Icon size */
-  height: 32px;
-  transition: transform 0.3s;
-}
-
-.social-icon img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-}
-
-.footer-policy {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.9rem;
-}
-
-.footer-policy a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-}
-
-.footer-policy a:hover {
-  color: #007bff;
-}
-
-  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -371,16 +41,30 @@
             </div>
         </div>
         <a href="#">Shop</a>
-        <a href="#">Home Loans</a>
+        <div class="dropdown">
+            <a href="#">Home Loans</a>
+            <div class="dropdown-menu">
+                <a href="#">Pre-Qualified Loans</a>
+                <a href="#">Loan Overview</a>
+                <a href="#">Loan Rates</a>
+                <a href="#">Refinance Rate</a>
+                <a href="#">Affordability</a>
+                <a href="#">Refinance Rate</a>
+                <a href="#">Rent vs Buy Calculator</a>
+            </div>
+        </div>
         <a href="#">Find an Agent</a>
+        <a href="#">Moving</a>
     </div>
     <div class="nav-right">
         <a href="#">Manage Rentals</a>
         <a href="#">Advertise</a>
         <a href="#">Help</a>
+        <a href="#">News & Insight</a>
         <a href="#">Sign In</a>
     </div>
 </nav>
+
 
   <!-- Search bar to replace navbar -->
   <div class="searchbar" id="searchbar">
@@ -444,6 +128,101 @@
       </div>
     </div>
   </section>
+
+  <section class="help-section">
+    <h2>Discover how we can help</h2>
+    
+    <!-- Toggle Buttons -->
+    <div class="toggle-buttons">
+        <button class="tab-button active" onclick="showTab('buying')">Buying</button>
+        <button class="tab-button" onclick="showTab('renting')">Renting</button>
+        <button class="tab-button" onclick="showTab('selling')">Selling</button>
+    </div>
+
+    <!-- Buying Content -->
+    <div class="tab-content" id="buying">
+        <div class="help-card">
+            <i class="fas fa-dollar-sign icon"></i>
+            <h3>Find out how much you can afford</h3>
+            <p>We'll help you estimate your budget range. Save to your buyer profile to help in your search.</p>
+            <a href="#">Try our affordability calculator</a>
+        </div>
+        <div class="help-card">
+            <i class="fas fa-calculator icon"></i>
+            <h3>Understand your monthly costs</h3>
+            <p>Get an in-depth look at what your monthly and closing costs will look like based on your financial situation and goals.</p>
+            <a href="#">Try our mortgage calculator</a>
+        </div>
+        <div class="help-card">
+            <i class="fas fa-money-bill-wave icon"></i>
+            <h3>Get help with your down payment</h3>
+            <p>You may be able to buy a home with just 3.5% down. Saving for that can be challenging—down payment assistance programs can help.</p>
+            <a href="#">Find down payment help</a>
+        </div>
+    </div>
+
+    <!-- Renting Content -->
+    <div class="tab-content" id="renting" style="display: none;">
+        <div class="help-card">
+            <i class="fas fa-home icon"></i>
+            <h3>Find rental properties</h3>
+            <p>Explore listings and discover the best rental options available for you.</p>
+            <a href="#">Search rentals</a>
+        </div>
+        <div class="help-card">
+            <i class="fas fa-handshake icon"></i>
+            <h3>Understand your lease</h3>
+            <p>Learn about lease agreements and what you should look out for before signing.</p>
+            <a href="#">Lease guide</a>
+        </div>
+    </div>
+
+    <!-- Selling Content -->
+    <div class="tab-content" id="selling" style="display: none;">
+        <div class="help-card">
+            <i class="fas fa-chart-line icon"></i>
+            <h3>Get your home's value</h3>
+            <p>Find out how much your home is worth based on market trends and pricing analysis.</p>
+            <a href="#">Check home value</a>
+        </div>
+        <div class="help-card">
+            <i class="fas fa-clipboard-list icon"></i>
+            <h3>Prepare your home for sale</h3>
+            <p>Learn how to stage your home and make improvements to maximize your sale price.</p>
+            <a href="#">Selling tips</a>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+  <!-- Top Section -->
+  <div class="top-section">
+      <div class="image">
+          <img src="home1.jpg" alt="Man working on a laptop">
+      </div>
+      <div class="content">
+          <h2>Need a home loan? Get pre-approved</h2>
+          <p>Find a lender who can offer competitive mortgage rates and help you with pre-approval.</p>
+          <button class="btn">Get pre-approved now</button>
+          <a href="#" class="disclosure">Advertising disclosure</a>
+      </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom-section">
+      <div class="content">
+          <h2>Get Local Info</h2>
+          <p>Does it have pet-friendly rentals? How are the schools? Get important local information on the area you’re most interested in.</p>
+          <div class="search-bar">
+              <input type="text" placeholder="Address, City, Zip or Neighborhood">
+              <button class="search-btn">🔍</button>
+          </div>
+      </div>
+      <div class="image">
+          <img src="family.jpg" alt="Family BBQ">
+      </div>
+  </div>
+</div>
 
   <div class="main-content">
     <!-- Other sections here -->

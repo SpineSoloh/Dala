@@ -16,3 +16,30 @@ window.addEventListener('scroll', () => {
   }
   lastScrollY = window.scrollY;
 });
+
+function showTab(tabName) {
+  let contents = document.querySelectorAll(".tab-content");
+  let buttons = document.querySelectorAll(".tab-button");
+
+  // Hide all content sections
+  contents.forEach(content => content.style.display = "none");
+
+  // Remove active class from all buttons
+  buttons.forEach(button => button.classList.remove("active"));
+
+  // Show selected tab
+  document.getElementById(tabName).style.display = "flex";
+
+  // Add active class to clicked button
+  event.currentTarget.classList.add("active");
+}
+
+document.querySelector(".search-btn").addEventListener("click", function() {
+  let query = document.querySelector(".search-bar input").value;
+  if (query) {
+      alert("Searching for: " + query);
+  } else {
+      alert("Please enter an address, city, zip, or neighborhood.");
+  }
+});
+  
