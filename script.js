@@ -50,4 +50,33 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTop = document.getElementById("backToTop");
+  const footer = document.querySelector("footer");
+  const navbar = document.querySelector(".nav-bar"); // Check if this is correct
+
+  // Observe when footer enters the viewport
+  const observer = new IntersectionObserver(
+      (entries) => {
+          if (entries[0].isIntersecting) {
+              backToTop.classList.add("show");
+          } else {
+              backToTop.classList.remove("show");
+          }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the footer is visible
+  );
+
+  observer.observe(footer);
+
+  // Smoothly scroll to nav-bar when clicking the arrow
+  window.scrollToNav = function () {
+      if (navbar) {
+          navbar.scrollIntoView({ behavior: "smooth" });
+      } else {
+          console.error("Navbar not found! Check the class or ID.");
+      }
+  };
+});
+
   
