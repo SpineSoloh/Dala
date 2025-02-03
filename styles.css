@@ -41,7 +41,7 @@
 .nav-links a, .nav-right a {
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Hide dropdown menu items by default */
@@ -73,7 +73,7 @@
   }
 
   .nav-links a {
-    font-size: 18px;
+    font-size: 14px;
     padding: 10px;
     text-align: center;
     width: 100%;
