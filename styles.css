@@ -41,7 +41,7 @@
 .nav-links a, .nav-right a {
   text-decoration: none;
   color: black;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* Hide dropdown menu items by default */
@@ -73,7 +73,7 @@
   }
 
   .nav-links a {
-    font-size: 14px;
+    font-size: 12px;
     padding: 10px;
     text-align: center;
     width: 100%;
@@ -94,6 +94,7 @@
     padding: 12px 15px;
     text-align: center;
     width: 100%;
+    font-size: 12px;
   }
 
   .dropdown:hover .dropdown-menu {
