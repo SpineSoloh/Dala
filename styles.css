@@ -23,7 +23,7 @@
 }
 
 .logo img {
-  height: 80px;
+  height: 30px;
 }
 
 .nav-links {
@@ -109,7 +109,7 @@
 .dropdown-menu a {
   display: block;
   padding: 10px;
-  color: #007bff;
+  color: #008000;
   text-decoration: none;
 }
 
@@ -231,14 +231,14 @@ display: flex; /* Show search bar */
   .search-bar button {
     padding: 0.8rem;
     border: none;
-    background-color: #007bff;
+    background-color: #008000;
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
   }
 
   .search-bar button:hover {
-    background-color: #0056b3;
+    background-color: #008000;
   }
 
   /* Next Section */
@@ -285,7 +285,7 @@ display: flex; /* Show search bar */
   }
 
   .next-section .card button {
-    background-color: #007bff;
+    background-color: #008000;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -294,7 +294,7 @@ display: flex; /* Show search bar */
   }
 
   .next-section .card button:hover {
-    background-color: #0056b3;
+    background-color: #008000;
   }
 
 /* Responsive Design */
@@ -343,7 +343,7 @@ margin-bottom: 1rem;
 }
 
 .about-text button {
-background-color: #3498db; /* Vibrant blue for CTA */
+background-color: #008000; /* Vibrant blue for CTA */
 color: #fff;
 border: none;
 padding: 0.8rem 1.5rem;
@@ -354,7 +354,7 @@ transition: background-color 0.3s ease;
 }
 
 .about-text button:hover {
-background-color: #2980b9; /* Darker shade on hover */
+background-color: #008000; /* Darker shade on hover */
 }
 
 .about-image {
@@ -589,7 +589,7 @@ p {
 }
 
 .footer-legal a {
-  color: #0056b3;
+  color: #008000;
   font-weight: bold;
   text-decoration: none;
 }
@@ -676,7 +676,7 @@ p {
 
 .footer .highlight {
   font-weight: bold;
-  color: #0056b3;
+  color: #008000;
 }
 
 @media (max-width: 768px) {
