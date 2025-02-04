@@ -79,4 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
+const images = ["hero1.jpg", "hero2.jpg", "hero3.jpg"];
+let index = 0;
+const hero = document.querySelector(".hero");
+
+setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+}, 3000);
+
+
   
