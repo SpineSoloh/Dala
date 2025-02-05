@@ -22,8 +22,18 @@ position: relative;
 z-index: 1000;
 }
 
+.logo a {
+  display: inline-block;
+}
+
 .logo img {
-height: 30px;
+  width: 120px; /* Adjust size */
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo a:hover img {
+  opacity: 0.8; /* Slight fade effect on hover */
 }
 
 .nav-links {
@@ -287,6 +297,75 @@ display: flex; /* Show search bar */
 
   .search-bar input {
       width: 100%;
+  }
+}
+
+/* Selling Tips Section */
+.selling-tips {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Header Styling */
+.selling-tips h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Individual Tip */
+.tip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tip Images */
+.tip img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Text Content */
+.tip-content {
+  text-align: left;
+}
+
+.tip-content h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tip-content p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tip {
+      grid-template-columns: 1fr; /* Stack images & text */
+  }
+  
+  .tip:nth-child(even) img {
+      order: -1; /* Keep alternating pattern */
   }
 }
 

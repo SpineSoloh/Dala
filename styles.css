@@ -22,8 +22,18 @@
   z-index: 1000;
 }
 
+.logo a {
+  display: inline-block;
+}
+
 .logo img {
-  height: 30px;
+  width: 120px; /* Adjust size */
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo a:hover img {
+  opacity: 0.8; /* Slight fade effect on hover */
 }
 
 .nav-links {
